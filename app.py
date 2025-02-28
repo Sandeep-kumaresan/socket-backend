@@ -21,9 +21,7 @@ def handle_disconnect():
 def handle_message(data):
     print(f"Received: {data}")
     emit("message", f"Echo: {data}", broadcast=True)
-@app.route('/')
-def index():
-    return "Running Success Drink Coffee"
+
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
 
